@@ -13,7 +13,7 @@ import java.util.List;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE) // 상속관계 전략 지정
 @DiscriminatorColumn(name = "dtpye")
-@Getter
+@Getter @Setter
 public abstract class Item {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
