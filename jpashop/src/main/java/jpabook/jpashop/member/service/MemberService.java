@@ -42,4 +42,12 @@ public class MemberService {
     public Member findOne(Long memberId) {
         return memberRepository.findOne(memberId);
     }
+
+    @Transactional
+    public void update(Long id, String name) {
+        Member member = memberRepository.findOne(id);
+        //member.setName(name); // 변경 감지에 의해서 변경, 이것도 나중에 setter 를 사용하지 않고 다른 방법을 사용하자.
+
+        member.updateName(name);
+    }
 }

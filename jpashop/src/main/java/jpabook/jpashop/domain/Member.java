@@ -23,4 +23,8 @@ public class Member {
     @OneToMany(mappedBy = "member",cascade = CascadeType.ALL) // 나는 Order 엔티티에 있는 member 필드에 의해서 매핑 된거야!
     private List<Order> orders = new ArrayList<>(); // 강의에서는 양방향으로 했지만 다대일 단방향을 더 추천한다고 한다.
 
+    // 업데이트 메소드 사용
+    public void updateName(String name) {
+        this.name = name;
+    }
 }
